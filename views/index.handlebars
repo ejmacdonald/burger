@@ -1,0 +1,55 @@
+    <div>
+      <div class = "container">
+
+        <div class="jumbotron vertical-center text-center">
+          <img src="/assets/images/burger.png" alt="burger image" width="100">
+          <h1><i class="fas fa-utensils" aria-hidden="true"></i>Burger Wish-List</h1>
+        </div>
+        
+
+        <div class="form-group text-center">
+            <label for="name">Input a burger type</label>
+            <input type="text" class="user-info" id="name">
+            <button type="submit" id="new-burger">Add Burger</button>
+        </div>
+
+        <div class="row">
+          <div class="col-md-6 col-md-offset-2">
+            <div class="card-header text-center">
+              Burgers I WANT to EAT!
+            </div>
+            <div>
+              <ul class="list-group">
+
+                  {{#each burger}}
+                    {{#unless devoured}}
+                      {{> burgers/burger-block devoured=true}}
+                    {{/unless}}
+                  {{/each}}
+
+              </ul>
+            </div>
+          </div>
+
+
+
+            <div class="col-md-6 col-md-offset-3">
+              <div class="card-header text-center">
+                Burgers I ATE!
+              </div>
+              <ul class="list-group">
+
+                {{#each burger}}
+                  {{#if devoured}}
+                    {{> burgers/burger-block devoured=false}}
+                  {{/if}}
+                {{/each}}
+
+              </ul>
+            </div>
+          </div>
+        </div>
+
+
+      </div>
+    </div>

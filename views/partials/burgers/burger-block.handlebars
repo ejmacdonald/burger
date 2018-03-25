@@ -1,0 +1,14 @@
+<li class="list-group-item">
+  {{burger_name}}
+  <div class="float-right">
+    <span class="input-group-btn">
+      <form>
+        <input type="hidden" name="devoured" value="true">
+        {{#if devoured}}
+        	<button class="btn btn-success btn-lg eat-btn" data-id="{{id}}" type="submit"> EAT IT! </button>
+        {{/if}}
+      </form>
+    </span>
+  </div>
+</li>
+
